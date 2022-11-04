@@ -12,20 +12,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="programmingLanguages")
-public class ProgrammingLanguage {
+@AllArgsConstructor
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
-	
-	@Column(name="name")
-	private String name;
-	
-	
-	
+@Entity
+@Table(name = "programming_language_technologies")
+public class ProgrammingLanguageTechnology {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "name")
+    private String name;
+
 }

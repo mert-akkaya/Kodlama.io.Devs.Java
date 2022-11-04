@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import Kodlama.io.Devs.business.abstracts.ProgrammingLanguageService;
+import Kodlama.io.Devs.business.requests.programmingLanguage.CreateProgrammingLanguageRequest;
+import Kodlama.io.Devs.business.requests.programmingLanguage.DeleteProgrammingLanguageRequest;
+import Kodlama.io.Devs.business.requests.programmingLanguage.UpdateProgrammingLanguageRequest;
+import Kodlama.io.Devs.business.response.programmingLanguage.GetAllProgrammingLanguageResponse;
+import Kodlama.io.Devs.business.response.programmingLanguage.GetByIdProgrammingLanguageResponse;
 import Kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -25,32 +30,32 @@ public class ProgrammingLanguagesController {
 	
 	
 	@GetMapping("/getall")
-	public List<ProgrammingLanguage> getAll(){
+	public List<GetAllProgrammingLanguageResponse> getAll(){
 		return _programmingLanguageService.getAll();
 		
 	}
 	
 	@GetMapping("/{id}")
-	public ProgrammingLanguage getById(@PathVariable int id) {
+	public GetByIdProgrammingLanguageResponse getById(@PathVariable int id) {
 		return _programmingLanguageService.getById(id);
 		
 	}
 	
 	@PostMapping("/add")
-	public void add(@RequestBody ProgrammingLanguage programmingLanguage) throws Exception {
-		_programmingLanguageService.create(programmingLanguage);
+	public void add(@RequestBody CreateProgrammingLanguageRequest createProgrammingLanguageRequest) throws Exception {
+		_programmingLanguageService.create(createProgrammingLanguageRequest);
 		
 	}
 	
 	@PostMapping("/update")
-	public void update(@RequestBody ProgrammingLanguage programmingLanguage) {
-		_programmingLanguageService.update(programmingLanguage);
+	public void update(@RequestBody UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
+		_programmingLanguageService.update(updateProgrammingLanguageRequest);
 		
 	}
 	
-	@DeleteMapping("/delete/{id}")
-	public void delete(@PathVariable int id) {
-		_programmingLanguageService.delete(id);
+	@DeleteMapping("/delete")
+	public void delete( DeleteProgrammingLanguageRequest deleteProgrammingLanguageRequest) {
+		_programmingLanguageService.delete(deleteProgrammingLanguageRequest);
 		
 	}
 	
