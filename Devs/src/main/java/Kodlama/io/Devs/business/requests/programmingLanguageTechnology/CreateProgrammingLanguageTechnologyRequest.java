@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateProgrammingLanguageTechnologyRequest {
 
+	private int programmingLanguageId;
 	private String name;
 }

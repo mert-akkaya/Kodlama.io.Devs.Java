@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 public class GetAllProgrammingLanguageTechnologyResponse {
 	private int id;
 	private String name;
+	private String programmingLanguageName;
 }
